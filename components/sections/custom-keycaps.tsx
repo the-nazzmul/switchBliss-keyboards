@@ -32,7 +32,10 @@ const CustomKeycaps = () => {
     <section className="relative flex h-[90vh] flex-col overflow-hidden bg-linear-to-b from-[#0f172a] to-[#062f4a] text-white">
       {/* SVG Background */}
       {/* Canvas */}
-      <Canvas>
+      <Canvas
+        camera={{ position: [0, 0.5, 0.5], fov: 45, zoom: 1.5 }}
+        className="-md-[10vh] grow"
+      >
         <SceneCustomKeycaps
           selectedTextureId={selectedTextureId}
           onAnimationComplete={handleAnimationComplete}

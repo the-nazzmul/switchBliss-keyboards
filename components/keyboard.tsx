@@ -172,7 +172,7 @@ interface KeyboardProps extends React.ComponentProps<"group"> {
 }
 
 export const Keyboard = forwardRef<KeyboardRefs, KeyboardProps>(
-  ({ ...props }, ref) => {
+  ({ keycapMaterial, knobColor, ...props }, ref) => {
     const { nodes, materials } = useGLTF(
       "/keyboard.gltf",
     ) as unknown as GLTFResult;
@@ -363,13 +363,15 @@ export const Keyboard = forwardRef<KeyboardRefs, KeyboardProps>(
       return () => screenTextureWithFlip.dispose();
     }, [screenTextureWithFlip]);
 
-    const keycapMat = new THREE.MeshStandardMaterial({
+    const defaultKeycapMat = new THREE.MeshStandardMaterial({
       roughness: 0.7,
       map: keycapTextureWithFlip,
     });
 
+    const keycapMat = keycapMaterial || defaultKeycapMat;
+
     const knobMat = new THREE.MeshStandardMaterial({
-      color: "#E24818",
+      color: knobColor || "#E24818",
       roughness: 0.4,
       metalness: 1,
       bumpMap: knurlTextureWithFlip,
