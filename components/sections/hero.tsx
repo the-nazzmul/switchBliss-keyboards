@@ -1,9 +1,8 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import Scene from "../scene";
+import SceneHero from "../scene-hero";
 import { Bounded } from "../bounded";
-
 
 const Hero = () => {
   return (
@@ -11,7 +10,7 @@ const Hero = () => {
       {/* Canvas */}
       <div className="hero-scene pointer-events-none sticky top-0 h-dvh w-full">
         <Canvas shadows="soft">
-          <Scene />
+          <SceneHero />
         </Canvas>
       </div>
       <div className="hero-content absolute inset-x-0 top-0 h-dvh">

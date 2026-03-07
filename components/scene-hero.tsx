@@ -5,7 +5,7 @@ import { Keyboard } from "./keyboard";
 import { Environment, PerspectiveCamera } from "@react-three/drei";
 import { Keycap } from "./keycap";
 
-const Scene = () => {
+const SceneHero = () => {
   // const { positionX, positionY, positionZ, rotationX, rotationY, rotationZ } =
   //   useControls({
   //     positionX: 0,
@@ -63,4 +63,4 @@ const Scene = () => {
   );
 };
 
-export default Scene;
+export default SceneHero;
