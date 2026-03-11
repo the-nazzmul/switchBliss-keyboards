@@ -13,7 +13,7 @@ export const BENTO_BOX_FEATURES = [
   },
   {
     title: "Cross Platform.",
-    description: "Mac, Windows, or Linux, Nimbus adapts to your workflow.",
+    description: "Mac, Windows, or Linux, SwitchBliss adapts to your workflow.",
     image: "/renders/render_2.png",
     size: "medium",
   },
