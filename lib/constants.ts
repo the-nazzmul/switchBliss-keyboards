@@ -70,3 +70,26 @@ export const KEYCAP_TEXTURES = [
     knobColor: "#F38785",
   },
 ];
+
+export const SWITCHES = [
+  {
+    id: "blue",
+    name: "Blue Max",
+    hexColor: "#0F80E7",
+  },
+  {
+    id: "red",
+    name: "Red Max",
+    hexColor: "#C92627",
+  },
+  {
+    id: "brown",
+    name: "Brown Max",
+    hexColor: "#6E3205",
+  },
+  {
+    id: "black",
+    name: "Black Max",
+    hexColor: "#000000",
+  },
+];
