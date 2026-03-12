@@ -1,3 +1,5 @@
+"use client";
+
 import { SWITCHES } from "@/lib/constants";
 import { Bounded } from "../bounded";
 import { FadeIn } from "../fade-in";
@@ -10,7 +12,7 @@ const SoundPlayground = () => {
         <h2 className="font-bold-slanted scroll-pt-6 text-6xl uppercase md:text-8xl">
           Craft Your Click
         </h2>
-        <p className="mb-6 max-w-4xl text-pretty">
+        <p className="text-md mb-6 max-w-4xl font-medium text-pretty">
           The Vapor75 can be customized with one of four premium switch types.
         </p>
         <FadeIn

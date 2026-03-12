@@ -1,5 +1,10 @@
+"use client";
+
 import { SWITCHES } from "@/lib/constants";
+import { Canvas } from "@react-three/fiber";
 import clsx from "clsx";
+import { Switch } from "./switch";
+import { Stage } from "@react-three/drei";
 
 type SwitchData = (typeof SWITCHES)[number];
 
@@ -24,6 +29,20 @@ const SwitchCanvas = ({ switchData }: SwitchCanvasProps) => {
     <div className="group relative min-h-96 overflow-hidden rounded-3xl select-none">
       {/* Text button */}
       {/* Canvas */}
+      <Canvas camera={{ position: [1.5, 2, 0], fov: 7 }}>
+        <Stage
+          adjustCamera
+          intensity={0.5}
+          shadows="contact"
+          environment="city"
+        >
+          <Switch
+            rotation={[0, Math.PI / 4, 0]}
+            color={colorName}
+            hexColor={hexColor}
+          />
+        </Stage>
+      </Canvas>
       <div
         className={clsx(
           "font-black-slanted absolute inset-0 -z-10 grid place-items-center text-8xl uppercase",
