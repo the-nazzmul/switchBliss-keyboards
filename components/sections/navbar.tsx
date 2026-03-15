@@ -54,7 +54,7 @@ export function Navbar() {
     <header
       className={clsx(
         "fixed top-0 right-0 left-0 z-50 flex items-center justify-between p-3 transition-[background-color,backdrop-filter] duration-200 md:p-6",
-        scrolled && "backdrop-blur-md",
+        scrolled && "backdrop-blur-[2px]",
       )}
     >
       <Link

@@ -9,12 +9,35 @@ import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Loader } from "../loader";
 import { useProgress } from "@react-three/drei";
+import { useEffect, useState } from "react";
+import clsx from "clsx";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
 function LoaderWrapper() {
   const { active } = useProgress();
-  return active ? <Loader /> : null;
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (active) {
+      queueMicrotask(() => setIsLoading(true));
+    } else {
+      const timer = setTimeout(() => setIsLoading(false), 100);
+      return () => clearTimeout(timer);
+    }
+  }, [active]);
+
+  return (
+    <div
+      className={clsx(
+        "motion-safe:transition-opacity motion-safe:duration-700",
+        isLoading ? "opacity-100" : "pointer-events-none opacity-0",
+      )}
+    >
+      <Loader />
+    </div>
+  );
 }
 
 const Hero = () => {
